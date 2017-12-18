@@ -1,0 +1,31 @@
+body {
+    background-color: #3c467c;
+}
+
+#Nav li {
+    list-style-type: none;
+}
+
+#Nav {
+    position: fixed;
+}
+
+#logo {}
+
+
+
+#bottle2 {
+    width: 350px;
+    height:500px;
+    background-image: url(../images/cup-01.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 0;
+    right:-500px;
+    z-index: 200;
+}
+.imgSize{
+    width:400px;
+    
+}
