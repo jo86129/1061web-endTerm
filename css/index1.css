@@ -1,0 +1,274 @@
+body {
+    width: 97%;
+    background-color: #884d54;
+    margin: 0 auto;
+    font-family: Microsoft JhengHei;
+}
+
+#container {
+    position: relative;
+    width: auto;
+    background-color: rgb(242, 192, 221);
+}
+
+#Nav li {
+    list-style-type: none;
+}
+
+#Nav {
+    position: fixed;
+}
+
+#logoPic {
+    width: 800px;
+    height: 1000px;
+    margin: 0 auto;
+}
+
+#bottle2 {
+    width: 350px;
+    height: 500px;
+    background-image: url(../images/cup-01.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 0;
+    right: -500px;
+    z-index: 200;
+}
+
+#bottle3 {
+    width: 350px;
+    height: 500px;
+    background-image: url(../images/drink-02.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 0;
+    right: -500px;
+    z-index: 200;
+}
+
+#bottle4 {
+    width: 350px;
+    height: 500px;
+    background-image: url(../images/drink-03.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 0;
+    right: -500px;
+    z-index: 200;
+}
+
+#bottle5 {
+    width: 350px;
+    height: 500px;
+    background-image: url(../images/drink-04.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 0;
+    right: -500px;
+    z-index: 200;
+}
+
+#bottle6 {
+    width: 350px;
+    height: 500px;
+    background-image: url(../images/drink-05.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 0;
+    right: -500px;
+    z-index: 200;
+    margin-bottom: 47px;
+}
+
+#calculate {
+    margin-top: 50px;
+}
+#ExplanationC{
+     background-color: #c3d894;
+    border-radius: 40px;
+    height: 500px;
+    margin-top: 4500px;
+    margin-bottom: 50px;
+}
+#ExplanationW {
+    height: 100px;
+    padding-top: 20px;
+    padding-left: 25%;
+    font-size: 20px;
+}
+
+#shoppingC{
+    background-color: rgb(227, 194, 210);
+    border-radius: 20px;
+    height: 225px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+#cup {
+    padding-left: 10%;
+    display: inline-block;
+}
+
+#ingredients {
+    width: 130px;
+    height: 400px;
+    display: inline-block;
+    float: right;
+    margin: 0 100px 100px 0;
+}
+
+#ingredients img {
+    width: 130px;
+    height: 130px;
+    display: inline-block;
+}
+
+#resetbotle {
+    width: 130px;
+    height: 35px;
+}
+
+#blank {
+    width: 35%;
+    height: 390px;
+    display: inline;
+    float: left;
+    margin-left: 50px;
+}
+
+#blank img {
+    width: 100px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+#cup {
+    width: 38%;
+    /*height: 35%;*/
+    float: left;
+    text-align: center;
+    display: inline;
+}
+
+#cup img {
+    width: 95%;
+}
+
+.intro {
+    position: relative;
+    margin: auto right;
+}
+
+.intro p {
+    margin-right: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+#logoPic img {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    opacity: 0;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+#bottle {
+    width: 350px;
+    height: 500px;
+    background-image: url(../images/cup-01.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 0;
+    right: -500px;
+    z-index: 200;
+}
+
+#colorfooter {
+    background-color: rgba(250, 250, 141, 0.56);
+    height: 10px;
+    position: relative;
+    bottom: 0;
+    clear: both;
+    margin-top: 200px;
+}
+
+#footer {
+    background-color: rgba(252, 255, 167, 0.63);
+    height: 620px;
+    box-sizing: border-box;
+    position: relative;
+    bottom: 0;
+    clear: both;
+}
+
+#footertitle {
+    margin-left: 40%;
+    margin-top: 2%;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.footercondition {
+    margin-top: 10px;
+    margin-left: 38%;
+    font-size: 18px;
+}
+
+.icion {
+    display: inline-block;
+    margin-left: 1100px;
+}
+
+i:hover {
+    opacity: 0.7;
+}
+
+a {
+    color: black;
+}
+
+.footercondition img {
+    height: 100px;
+    width: 100px;
+}
+
+.row {
+    width: 100%;
+    text-align: center;
+}
+
+.card {
+    width: 24.8%;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.card-img-top {
+    width: 50%;
+    height: 50%;
+}
+
+#cart {
+    width: 50px;
+    position: fixed;
+    bottom: 100px;
+    right: 0;
+}
