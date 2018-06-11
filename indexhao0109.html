@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Food Owe</title>
+    <link rel="icon" href="images/logo-icion.png">
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="bootstrap-sweetalert-master/dist/sweetalert.min.js"></script>
+    <link href="bootstrap-sweetalert-master/dist/sweetalert.css" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+
+    <script>
+        window.onload = Bounce;
+
+        function Bounce() {
+            $('#logo1').animate({
+                top: "15em",
+                opacity: '+=1'
+            }, 1000, 'easeOutBounce');
+            $('#logo2').animate({
+                top: "15em",
+                opacity: '+=1'
+            }, 1500, 'easeOutBounce');
+
+
+        }
+        $(document).ready(function() {
+
+            var total = 0;
+            var drag = [];
+            $(".intro").hide();
+
+            $("#ingredients img").draggable({
+
+                revert: "invalid",
+                helper: "clone",
+
+                start: function(event, ui) {
+                    ui.helper.css("transform", "rotate(5deg)scale(1.5)");
+                },
+                stop: function(event, ui) {
+                    ui.helper.css("transform", "rotate(0deg) scale(1)");
+
+                },
+
+                zIndex: 100
+
+
+            });
+            $("#blank img").draggable({
+
+                revert: "invalid",
+                helper: "clone",
+
+                start: function(event, ui) {
+                    ui.helper.css("transform", "rotate(5deg)scale(1.5)");
+                },
+                stop: function(event, ui) {
+                    ui.helper.css("transform", "rotate(0deg) scale(1)");
+
+                },
+                zIndex: 100
+
+            });
+
+            $("#cup img").droppable({
+                drop: function(event, ui) {
+                    ui.helper.hide("explode");
+                    var dropthing = $(ui.helper).attr("alt");
+                    if (dropthing == 'shan' || dropthing == 'pudding' || dropthing == 'jenju') {
+                        alert(drag.length);
+                        if (drag.length == 0) {
+                            swal({
+                                title: "漂亮！",
+                                text: "这是自定义图标。",
+                                /*imageUrl: "images/chart/milk-tea.png"*/
+                                icon: "images/chart/milk-tea.png"
+                            });
+                        }
+
+
+
+
+                    }
+
+
+
+                    /*if (dropthing == "shan") {
+                         $(this).attr("src", "images/drink-shan.png"); 
+                     }
+
+                     if (dropthing == "pudding") {
+                         $(this).attr("src", "images/drink-pudding.png");
+                         total = 40;
+                     }
+
+                     if (dropthing == "jenju") {
+                         $(this).attr("src", "images/drink-jenju.png");
+                         total = 50;
+                     }*/
+
+
+                }
+
+            });
+
+
+
+            $('.js-sweetAlert').click(function() {
+                swal("完成!", "你的商品已加入購物車", "success")
+            });
+
+
+
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="Nav">
+        <li>
+            <a href="#" title="Logo"><img src="images/dot.png" alt="Link" /></a>
+        </li>
+        <li>
+            <a href="#bottle2" title="Bottle"><img src="images/dot.png" alt="Link" /></a>
+        </li>
+        <li>
+            <a href="#" title="Next Section"><img src="images/dot.png" alt="Link" /></a>
+        </li>
+        <li>
+            <a href="#" title="Next Section"><img src="images/dot.png" alt="Link" /></a>
+        </li>
+    </div>
+    <!--Nav end -->
+    <div id="logo">
+        <div id="logoPic">
+            <img class="left" src="images/logo-01.png" alt="logo1" id="logo1">
+            <img class="right" src="images/logo-02.png" alt="logo2" id="logo2">
+        </div>
+
+
+    </div>
+    <!--logo end -->
+
+    <div id=bottle data-0="right:-500px" data-500="opacity:1;right:350px" data-1000="right:500px;" data-2000="opacity:0;right:500px;">
+    </div>
+
+    <!--bootle2 -->
+    <div id=bottle2 data-1500="opacity:0;right:500px" data-2000="opacity:1;right:500px" data-2500="opacity:0;right:500px;">
+    </div>
+
+    <div id=bottle3 data-2000="opacity:0;right:500px" data-2500="opacity:1;right:500px" data-3000="opacity:0;right:500px;">
+    </div>
+    
+    <div id=bottle4 data-2500="opacity:0;right:500px" data-3000="opacity:1;right:500px" data-3500="opacity:0;right:500px;">
+    </div>
+    
+    <div id=bottle5 data-3000="opacity:0;right:500px" data-3500="opacity:1;right:500px" data-4000="opacity:0;right:500px;">
+    </div>
+    
+    <div id=bottle6 data-3500="opacity:0;right:500px" data-4000="opacity:1;right:500px" data-4500="opacity:1;right:500px;">
+    </div>
+    <!--<div id="choose">
+
+    </div>-->
+
+    <!--價格試算頁面開始-->
+    <section class="clearfix">
+        <div id="calculate">
+            <div id="blank">
+                <img src="images/drink/assam-black-tea-latte.png" alt="薩姆姆紅茶拿">
+                <img src="images/drink/assam-milk-tea.png" alt="assam-milk-tea">
+                <img src="images/drink/black-bear.png" alt="black-bear">
+                <img src="images/drink/matcha-milk.png" alt="matcha-milk">
+                <img src="images/drink/melon-soy-milk.png" alt="melon-soy-milk">
+                <img src="images/drink/milk-tea.png" alt="milk-tea">
+                <img src="images/drink/mirage-fruit.png" alt="mirage-fruit">
+                <img src="images/drink/orange-green-tea.png" alt="orange-green-tea">
+                <img src="images/drink/strewberry-vinegar.png" alt="strewberry-vinegar">
+                <img src="images/drink/three-bao.png" alt="three-bao">
+                <img src="images/drink/tomato.png" alt="tomato">
+                <img src="images/drink/yakult-green-tea.png" alt="yakult-green-tea">
+            </div>
+            <div id="cup">
+                <img src="images/cup-01.png">
+            </div>
+            <div id="ingredients">
+
+                <img src="images/shan.png" id="shan" alt="shan">
+
+                <img src="images/pudding.png" id="pudding" alt='pudding'>
+
+                <img src="images/jenju.png" id="jenju" alt='jenju'>
+
+            </div>
+
+        </div>
+    </section>
+    <img id="cart" src="images/cart.png">
+    <!--價格試算頁面結束-->
+
+    <!--購物車頁面開始-->
+    <!--<button class="js-sweetAlert">HAAAAAAAA</button>-->
+    <div class="row">
+        <div class="card">
+            <img class="card-img-top" src="images/drink-pudding.png">
+            <div class="card-body">
+                <h4 class="card-title">布丁奶茶</h4>
+                <p class="card-text">好喝喔</p>
+                <a class="btn btn-primary js-sweetAlert">加入購物車</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="images/drink-pudding.png">
+            <div class="card-body">
+                <h4 class="card-title">布丁奶茶</h4>
+                <p class="card-text">好喝喔</p>
+                <a class="btn btn-primary js-sweetAlert">加入購物車</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="images/drink-pudding.png">
+            <div class="card-body">
+                <h4 class="card-title">布丁奶茶</h4>
+                <p class="card-text">好喝喔</p>
+                <a class="btn btn-primary js-sweetAlert">加入購物車</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="images/drink-pudding.png">
+            <div class="card-body">
+                <h4 class="card-title">布丁奶茶</h4>
+                <p class="card-text">好喝喔</p>
+                <a class="btn btn-primary js-sweetAlert">加入購物車</a>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!--choose end-->
+
+    <!--使用下列語法，產出隨著SkrollBar往下拉，DIV一邊變色一邊滾動的效果DEMO-->
+    <!-- <div data-0="background-color:rgb(111, 111, 252);transform:rotate(0deg);" 
+    data-250="background-color:rgb(253, 112, 112);transform:rotate(180deg);"> WOOOT </div>-->
+
+    <div id="colorfooter">
+    </div>
+    <!--上一行只是想給個顏色而已，別見怪-->
+    <footer id="footer">
+        <div id="footertitle">
+            <p><b>＋＋＋＋＋＋加盟必備條件＋＋＋＋＋＋</b></p><br>
+            <p style="margin-left: 25%">✔食欠的忠實粉絲</p><br>
+            <p style="margin-left: 25%">✔你喜歡喝珍奶嗎</p><br>
+            <p style="margin-left: 25%">✔願意為食欠努力</p><br>＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+        </div>
+        <div class="footercondition">
+            <b>UP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;滿足以上&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Down</b>
+        </div>
+        <div class="footercondition" style="margin-left: 30%;margin-top: 2%;"> 由&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.youtube.com/channel/UCXuhUDtntj7-5ne8xq5IMMg" target="_blank"><img src="/images/yang.png" alt=""></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.youtube.com/channel/UCEJdm5Dn3ITF0ONQ6I4JsRA" target="_blank"><img src="/images/hsiao.png" alt=""></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.youtube.com/channel/UC-NTe9SbVQO2KfEEHFhBesQ?view_as=subscriber" target="_blank"><img src="/images/hao.png" alt=""> </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;創立
+        </div>
+        <div class="footercondition" style="margin-left: 38%;margin-top: 0px;font-size: 25px">
+            楊&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;筱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;豪
+        </div>
+        <div class="footercondition" style="margin-left: 35%;margin-top: 0px;font-size: 18px">
+            0960946523&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0909942527&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0927125068
+        </div>
+        <div class="footercondition" style="margin-left: 36%">
+            Foodowe © 2017 Drink International FO., Making.
+        </div>
+        <div style="margin-left: 27%">
+            地址：桃園市111大溪區土鳳梨酥街116號3樓 | 總機電話：+886-8-2887-1826 | 客服電話：0800-870-887
+        </div>
+        <div class="icion">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-square" style="font-size:36px;padding-left: 10px;"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" style="font-size:36px;padding-left: 10px;"></i></a>
+            <a href="https://www.youtube.com/channel/UCXuhUDtntj7-5ne8xq5IMMg" target="_blank"><i class="fa fa-youtube-play" style="font-size:36px;padding-left: 10px;"></i></a>
+            <a href="" target="_blank"><i class="fa fa-twitter" style="font-size:36px;padding-left: 10px;"></i></a>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script type="text/javascript" src="js/skrollr.min.js"></script>
+    <script type="text/javascript">
+        var s = skrollr.init(); //初始化
+    </script>
+</body>
+
+</html>

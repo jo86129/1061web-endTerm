@@ -1,0 +1,138 @@
+<<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <title>「食欠」價格試算</title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    
+        <link rel="stylesheet" href="css/index.css">
+
+
+
+    <!--<style>
+        #cup {
+            text-align: center;
+        }
+        
+        #ingredients {
+            width: 100px;
+            height: auto;
+            margin-left: 0px;
+            margin-top: 300px;
+        }
+        
+        #ingredients img {
+            margin: 0 auto;
+        }
+</style>
+   -->
+    <script>
+        $(document).ready(function() {
+
+
+
+
+            $("#ingredients img").draggable({
+
+                revert: "invalid",
+                //helper:"clone" 
+
+                start: function(event, ui) {
+                    ui.helper.css("transform", "rotate(5deg)scale(1.5)");
+                },
+                stop: function(event, ui) {
+                    ui.helper.css("transform", "rotate(0deg) scale(1)");
+
+                },
+
+                zIndex: 100
+
+
+            });
+
+            $("#cup img").droppable({
+                drop: function(event, ui) {
+                    ui.helper.hide("explode");
+                    //if(ui.helper.src)
+                    
+                    $(this).attr("src", "images/drink-jenju.png");
+                }
+                
+                
+                
+            
+                        
+            
+                
+            });
+            
+           
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="Nav">
+        <li>
+            <a href="#" title="Logo"><img src="images/dot.png" alt="Link" /></a>
+        </li>
+        <li>
+            <a href="#bottle2" title="Bottle"><img src="images/dot.png" alt="Link" /></a>
+        </li>
+        <li>
+            <a href="#" title="Next Section"><img src="images/dot.png" alt="Link" />價格試算</a>
+        </li>
+        <li>
+            <a href="#" title="Next Section"><img src="images/dot.png" alt="Link" /></a>
+        </li>
+    </div>
+    <!--Nav end -->
+     
+    <div id="contnt">
+        <div id="ingredients">
+
+            <img src="images/shan.png"id="shan">
+            
+            <img src="images/pudding.png" id="pudding">
+            
+            <img src="images/jenju.png" id="jenju">
+
+        </div>
+        <!--<div id="jenju">
+                <img src="images/jenju.jpeg" width="150" height="100"></div>-->
+
+        <div id="cup">
+            <img src="images/cup-01.png" width="268px" height="388px">
+        </div>
+
+
+    </div>
+
+    <div id="container">
+        <div class="row"></div>
+
+
+    </div>
+
+
+
+
+    <script type="text/javascript" src="js/skrollr.min.js"></script>
+    <script type="text/javascript">
+        var s = skrollr.init(); //初始化
+    </script>
+    <!--<script src="js/jquery-3.2.1.min.js"></script>-->
+</body>
+
+    </html>

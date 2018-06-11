@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Food Owe</title>
+    <link rel="icon" href="images/logo-icion.png">
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index-checkout.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="css/jquery-ui.min.css" rel="stylesheet">
+    
+    
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+           
+            $("#checkout").dialog({
+                autoOpen: false,
+                width: 720,
+                height:500,
+            });
+
+            $("#cart").click(function(evt) {
+
+                evt.preventDefault();
+                $("#checkout").dialog("open");
+                
+               /* if (localStorage) {
+                    localStorage.member = JSON.stringify(mem); //JSON.stringify轉換成字串
+                }*/
+                var drink;
+                 var stor=window.localStorage;
+                
+                for(i=0;i<stor.length;i++)
+                    {
+                        
+                      /*  var h="你買了" +localStorage.mem.name[i] + "配料:" + localStorage.mem.ingre[i] + ",共" + localStorage.mem.quantity[i] + "杯，" + price + "元";
+                        $("#checkout").html(h);*/
+                           
+                        var h="你買了" +localStorage.name[i] + "配料:" + localStorage.ingre[i] + ",共" + localStorage.quantity[i] + "杯，" + price + "元";
+                        $("#checkout").html(h);
+                        
+                     /* var  h="你買了" +localStorage.getItem('mem.name') + "配料:" + localStorage.getItem('mem.ingre') + ",共" + localStorage.getItem('mem.quantity') + "杯，" + price + "元"*/
+                        
+                        $("#checkout").html(h);
+                
+                    }
+                
+                
+                 
+                
+                
+                
+                
+
+            });
+        }); // end ready
+    </script>
+</head>
+
+<body>
+
+    <!--<button id="checkoutbtn">-->
+    <img id="cart" src="images/cart.png"><!--</button>-->
+
+    <div id="checkout" title="結帳">
+      <!-- <div>
+           <p>您買了薩姆姆紅茶拿鐵，配料為布丁，共兩杯，共90元</p>
+           
+       </div>
+       
+       <div>
+            <p>您買了還我飄飄橙香綠茶，配料為無，共一杯，共35
+        元</p>
+           
+       </div>-->
+        
+       
+        <button>完成訂購</button>
+
+
+
+
+    <script type="text/javascript" src="js/skrollr.min.js"></script>
+    <script type="text/javascript">
+        var s = skrollr.init(); //初始化
+    </script>
+</body>
+
+</html>
